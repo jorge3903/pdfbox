@@ -1,23 +1,15 @@
 /*
 
-https://jenkins.io/doc/tutorials/build-a-java-app-with-maven/
-https://jenkins.io/doc/book/pipeline/docker/
-https://funnelgarden.com/sonarqube-jenkins-docker/
+Set up Jenkins container
+docker run -t --rm -u root -p 8080:8080 -v jenkins-data:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -v "$HOME":/home --network mynet --name jenkins jenkinsci/blueocean
 
-https://medium.com/@rosaniline/setup-sonarqube-with-jenkins-declarative-pipeline-75bccdc9075f
-https://stackoverflow.com/questions/48557886/how-to-execute-sonarqube-scanner-in-jenkins-declarative-pipeline-without-maven-a
+Set up DV8 container
+docker run -it --rm -p 8000:8080 -v jenkins-data:/var/jenkins_home --network mynet --name dv8-console dv8-console java -jar gs-rest-service-0.1.0.jar
 
-https://stackoverflow.com/questions/42817169/jenkins-trigger-builds-remotely-authentication-token-option-missing
+See the containers ip address
+docker network inspect mynet
 
-Pending things to fix:
-- Do not add sonar.java.binaries option here
-- Create a docker-compose file to set up the containers
-
-dv8-console arch-report -paramsFile archreport.properties
-
-apk add eudev
-
-Trigger: curl -I -X POST "http://admin:11c135301ff1ab896872af14b2ad65303e@localhost:8080/job/JenkinsSonarqube/build?token=J6SiKjpEaLqiU7WuQlMIZ1qlMrml5fhM"
+ServiceComponentRuntime
 
 */
 pipeline {
@@ -49,16 +41,16 @@ pipeline {
                 }
             }
         }
-        
+        */
         
         
 
         stage('DV8 analysis') {
             steps {
-                sh 'curl http://172.18.0.3:8080/preprocessor?directory=/var/jenkins_home/workspace/JenkinsSonarqube@2'
+                sh 'curl http://172.18.0.2:8080/preprocessor?directory=/var/jenkins_home/workspace/JenkinsSonarqube@2'
             }
         }
-        */  
+
 
     }
 }
