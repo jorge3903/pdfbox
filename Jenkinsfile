@@ -47,7 +47,7 @@ pipeline {
 
         stage('DV8 analysis') {
             steps {
-                sh 'curl http://172.18.0.2:8080/preprocessor?directory=/var/jenkins_home/workspace/JenkinsSonarqube@2'
+                sh 'curl http://172.18.0.2:8080/preprocessor?directory=/var/jenkins_home/workspace/ServiceComponentRuntime@2'
             }
         }
 
