@@ -9,7 +9,7 @@ docker run -it --rm -p 8000:8080 -v jenkins-data:/var/jenkins_home --network myn
 See the containers ip address
 docker network inspect mynet
 
-ServiceComponentRuntime
+ServiceComponentRuntime Jenkinsfile
 
 */
 pipeline {
