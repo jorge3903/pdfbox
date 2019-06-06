@@ -33,6 +33,7 @@ pipeline {
             }
         }  
         
+        /*
         stage('Sonarqube analysis') {
             environment {
                 SONAR_SCANNER_OPTS = "-Xmx2g -Dsonar.projectKey=ServiceComponentRuntime -Dsonar.login=534e3ba62bc724b92c4e3ba2b771ffe3d8dfa08a -Dsonar.java.binaries=${WORKING_DIR}/target/classes"
@@ -43,6 +44,7 @@ pipeline {
                 }
             }
         }
+        */
         
 
         stage('DV8 analysis') {
