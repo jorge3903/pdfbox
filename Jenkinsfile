@@ -33,10 +33,9 @@ pipeline {
             }
         }  
         
-        /*
         stage('Sonarqube analysis') {
             environment {
-                SONAR_SCANNER_OPTS = "-Xmx2g -Dsonar.projectKey=Test -Dsonar.login=202b6aef450f839353fc0f087248c4a8a566c9e1 -Dsonar.java.binaries=/var/jenkins_home/workspace/JenkinsSonarqube@2/target/classes"
+                SONAR_SCANNER_OPTS = "-Xmx2g -Dsonar.projectKey=ServiceComponentRuntime -Dsonar.login=a8582769ba09391c2fb53c415196b35f4a1eacf2 -Dsonar.java.binaries=${WORKING_DIR}/target/classes"
             } 
             steps {
                 withSonarQubeEnv('SonarQube') {
@@ -44,8 +43,6 @@ pipeline {
                 }
             }
         }
-        */
-        
         
 
         stage('DV8 analysis') {
