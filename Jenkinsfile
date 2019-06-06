@@ -35,7 +35,7 @@ pipeline {
         
         stage('Sonarqube analysis') {
             environment {
-                SONAR_SCANNER_OPTS = "-Xmx2g -Dsonar.projectKey=ServiceComponentRuntime -Dsonar.login=a8582769ba09391c2fb53c415196b35f4a1eacf2 -Dsonar.java.binaries=${WORKING_DIR}/target/classes"
+                SONAR_SCANNER_OPTS = "-Xmx2g -Dsonar.projectKey=ServiceComponentRuntime -Dsonar.login=534e3ba62bc724b92c4e3ba2b771ffe3d8dfa08a -Dsonar.java.binaries=${WORKING_DIR}/target/classes"
             } 
             steps {
                 withSonarQubeEnv('SonarQube') {
