@@ -22,7 +22,7 @@ pipeline {
         WORKING_DIR='/var/jenkins_home/workspace/ServiceComponentRuntime@2'
     }
     stages {
-    /*
+    
         stage('Build') {
             agent {
                 docker {
@@ -33,7 +33,7 @@ pipeline {
             steps {
                 sh 'mvn -B -DskipTests clean package'
             }
-        } */ 
+        } 
         
         /*
         stage('Sonarqube analysis') {
@@ -59,7 +59,6 @@ pipeline {
 
                 echo "generating arch-report:"
                 sh 'curl http://${DV8_CONSOLE_IP}/arch-report?directory=${WORKING_DIR}'
-                */
 
                 echo "Propagation cost ="
                 echo sh(returnStdout: true, script: 'curl -X POST http://${DV8_CONSOLE_IP}/metrics -d "directory=${WORKING_DIR}&metric=pc" 2>/dev/null')
