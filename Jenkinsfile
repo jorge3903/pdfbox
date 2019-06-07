@@ -18,7 +18,7 @@ pipeline {
         skipStagesAfterUnstable()
     }
     environment {
-        DV8_CONSOLE_IP=172.18.0.2
+        DV8_CONSOLE_IP='172.18.0.2'
         WORKING_DIR='/var/jenkins_home/workspace/ServiceComponentRuntime@2'
     }
     stages {
