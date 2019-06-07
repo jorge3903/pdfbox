@@ -62,7 +62,7 @@ pipeline {
                 */
 
                 echo "Propagation cost ="
-                sh(returnStdout: true, script: 'curl -X POST http://${DV8_CONSOLE_IP}/metrics -d "directory=${WORKING_DIR}&metric=pc"')
+                echo sh(returnStdout: true, script: 'curl -X POST http://${DV8_CONSOLE_IP}/metrics -d "directory=${WORKING_DIR}&metric=pc"')
                 
 
 /*
