@@ -22,6 +22,7 @@ pipeline {
         WORKING_DIR='/var/jenkins_home/workspace/ServiceComponentRuntime@2'
     }
     stages {
+    /*
         stage('Build') {
             agent {
                 docker {
@@ -32,7 +33,7 @@ pipeline {
             steps {
                 sh 'mvn -B -DskipTests clean package'
             }
-        }  
+        } */ 
         
         /*
         stage('Sonarqube analysis') {
@@ -50,7 +51,7 @@ pipeline {
 
         stage('DV8 analysis') {
             steps {
-                /* sh 'curl http://${DV8_CONSOLE_IP}:8080/test-connection 2>/dev/null|jq -r .result' */
+                /* sh 'curl http://${DV8_CONSOLE_IP}:8080/test-connection 2>/dev/null|jq -r .result' 
 
                 echo "preprocessing files:"
                 sh 'curl http://${DV8_CONSOLE_IP}/preprocessor?directory=${WORKING_DIR}'
@@ -58,12 +59,13 @@ pipeline {
 
                 echo "generating arch-report:"
                 sh 'curl http://${DV8_CONSOLE_IP}/arch-report?directory=${WORKING_DIR}'
+                */
 
                 echo "Propagation cost ="
-                echo sh (returnStdout: true, script = 'curl -X POST http://${DV8_CONSOLE_IP}/metrics -d "directory=${WORKING_DIR}&metric=pc"').result
+                echo sh 'curl -X POST http://${DV8_CONSOLE_IP}/metrics -d "directory=${WORKING_DIR}&metric=pc"'
 
                 echo "Decoupling level ="
-                echo sh (returnStdout: true, script = 'curl -X POST http://${DV8_CONSOLE_IP}/metrics -d "directory=${WORKING_DIR}&metric=dl"').result
+                echo sh 'curl -X POST http://${DV8_CONSOLE_IP}/metrics -d "directory=${WORKING_DIR}&metric=dl"'
                 
 
             }
