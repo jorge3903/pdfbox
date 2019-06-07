@@ -49,9 +49,9 @@ pipeline {
 
         stage('DV8 analysis') {
             steps {
-                sh 'curl http://172.18.0.2:8080/preprocessor?directory=${WORKING_DIR}'
+                sh 'curl http://172.18.0.3:8080/preprocessor?directory=${WORKING_DIR}'
 
-                sh 'curl http://172.18.0.2:8080/arch-report?directory=${WORKING_DIR}'
+                sh 'curl http://172.18.0.3:8080/arch-report?directory=${WORKING_DIR}'
 
             }
         }
