@@ -50,11 +50,19 @@ pipeline {
 
         stage('DV8 analysis') {
             steps {
-                sh 'curl http://${DV8_CONSOLE_IP}:8080/test-connection 2>/dev/null|jq -r .result'
+                /* sh 'curl http://${DV8_CONSOLE_IP}:8080/test-connection 2>/dev/null|jq -r .result' */
 
+                sh 'echo "preprocessing files:"'
                 sh 'curl http://${DV8_CONSOLE_IP}:8080/preprocessor?directory=${WORKING_DIR}'
 
+                sh 'echo "generating arch-report:"'
                 sh 'curl http://${DV8_CONSOLE_IP}:8080/arch-report?directory=${WORKING_DIR}'
+
+                sh 'echo "Propagation cost ="'
+                sh 'curl -X POST http://172.18.0.2:8080/metrics -d "directory=/var/jenkins_home/workspace/ServiceComponentRuntime@2&metric=pc"'
+
+                sh 'echo "Decoupling level ="'
+                sh 'curl -X POST http://172.18.0.2:8080/metrics -d "directory=/var/jenkins_home/workspace/ServiceComponentRuntime@2&metric=dl"'
 
             }
         }
