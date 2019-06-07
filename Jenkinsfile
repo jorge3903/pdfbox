@@ -1,10 +1,10 @@
 /*
 
 Set up Jenkins container
-docker run -t --rm -u root -p 8080:8080 -v jenkins-data:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -v "$HOME":/home --network mynet --name jenkins jenkinsci/blueocean
+docker run -t -u root -p 8080:8080 -v jenkins-data:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -v "$HOME":/home --network mynet --name jenkins jenkinsci/blueocean
 
 Set up DV8 container
-docker run -it --rm -p 8000:8080 -v jenkins-data:/var/jenkins_home --network mynet --name dv8-console dv8-console java -jar gs-rest-service-0.1.0.jar
+docker run -it --rm -p 8000:8080 -v jenkins-data:/var/jenkins_home -v /Users/humbertocervantes/Downloads/dv8-2.0.0-2019051701-education/debugTmp/:/var/jenkins_home/workspace/ServiceComponentRuntime@2/Architecture-analysis-result --network mynet --name dv8-console dv8-console java -jar gs-rest-service-0.1.0.jar
 
 See the containers ip address
 docker network inspect mynet
