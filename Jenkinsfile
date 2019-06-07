@@ -18,6 +18,7 @@ pipeline {
         skipStagesAfterUnstable()
     }
     environment {
+        DV8_CONSOLE_IP=172.18.0.2
         WORKING_DIR='/var/jenkins_home/workspace/ServiceComponentRuntime@2'
     }
     stages {
@@ -49,9 +50,11 @@ pipeline {
 
         stage('DV8 analysis') {
             steps {
-                sh 'curl http://172.18.0.2:8080/preprocessor?directory=${WORKING_DIR}'
+                curl http://${DV8_CONSOLE_IP}:8080/test-connection 2>/dev/null|jq -r .result
 
-                sh 'curl http://172.18.0.2:8080/arch-report?directory=${WORKING_DIR}'
+                sh 'curl http://${DV8_CONSOLE_IP}:8080/preprocessor?directory=${WORKING_DIR}'
+
+                sh 'curl http://${DV8_CONSOLE_IP}:8080/arch-report?directory=${WORKING_DIR}'
 
             }
         }
