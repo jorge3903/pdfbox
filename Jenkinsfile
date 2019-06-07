@@ -63,7 +63,7 @@ pipeline {
                 echo sh (returnStdout: true, script = 'curl -X POST http://${DV8_CONSOLE_IP}/metrics -d "directory=${WORKING_DIR}&metric=pc"').result
 
                 echo "Decoupling level ="
-                sh (returnStdout: true, script = 'curl -X POST http://${DV8_CONSOLE_IP}/metrics -d "directory=${WORKING_DIR}&metric=dl"').result
+                echo sh (returnStdout: true, script = 'curl -X POST http://${DV8_CONSOLE_IP}/metrics -d "directory=${WORKING_DIR}&metric=dl"').result
                 
 
             }
