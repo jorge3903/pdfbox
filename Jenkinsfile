@@ -52,8 +52,23 @@ pipeline {
             steps {
                 /* sh 'curl http://${DV8_CONSOLE_IP}:8080/test-connection 2>/dev/null|jq -r .result' */
 
+                sh (returnStdout: true,
+                    script: '
+                        echo "preprocessing files:"
+                        curl http://${DV8_CONSOLE_IP}/preprocessor?directory=${WORKING_DIR}
+                        echo "generating arch-report:"
+                        curl http://${DV8_CONSOLE_IP}/arch-report?directory=${WORKING_DIR}
+                        Propagation cost ="
+                        curl -X POST http://${DV8_CONSOLE_IP}/metrics -d "directory=${WORKING_DIR}&metric=pc"
+                        echo "Decoupling level ="
+                        curl -X POST http://${DV8_CONSOLE_IP}/metrics -d "directory=${WORKING_DIR}&metric=dl"
+                    ')
+                
+
+                /*
                 sh 'echo "preprocessing files:"'
                 sh 'curl http://${DV8_CONSOLE_IP}/preprocessor?directory=${WORKING_DIR}'
+                
 
                 sh 'echo "generating arch-report:"'
                 sh 'curl http://${DV8_CONSOLE_IP}/arch-report?directory=${WORKING_DIR}'
@@ -63,6 +78,7 @@ pipeline {
 
                 sh 'echo "Decoupling level ="'
                 sh 'curl -X POST http://${DV8_CONSOLE_IP}/metrics -d "directory=${WORKING_DIR}&metric=dl"'
+                */
 
             }
         }
