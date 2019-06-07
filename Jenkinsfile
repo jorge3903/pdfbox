@@ -62,11 +62,13 @@ pipeline {
                 */
 
                 echo "Propagation cost ="
-                sh 'curl -X POST http://${DV8_CONSOLE_IP}/metrics -d "directory=${WORKING_DIR}&metric=pc"'
+                pc=sh(returnStdout: true, script: 'curl -X POST http://${DV8_CONSOLE_IP}/metrics -d "directory=${WORKING_DIR}&metric=pc"')
+                echo ${pc}
 
+/*
                 echo "Decoupling level ="
                 sh 'curl -X POST http://${DV8_CONSOLE_IP}/metrics -d "directory=${WORKING_DIR}&metric=dl"'
-                
+  */              
 
             }
         }
