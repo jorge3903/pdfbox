@@ -51,7 +51,7 @@ pipeline {
 
         stage('DV8 analysis') {
             steps {
-                /* sh 'curl http://${DV8_CONSOLE_IP}:8080/test-connection 2>/dev/null|jq -r .result' 
+                /* sh 'curl http://${DV8_CONSOLE_IP}:8080/test-connection 2>/dev/null|jq -r .result' */
 
                 echo "preprocessing files:"
                 sh 'curl http://${DV8_CONSOLE_IP}/preprocessor?directory=${WORKING_DIR}'
