@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
 <config version="1.0">
   <bean class="com.archdia.dv8.naming.SimpleAffixRemovalNamePreProcessor">
     <property name="prefixes">
-      <list> 
-   	<value></value>
+      <list>
+        <value>scr/src/</value>
       </list>
     </property>
     <property name="order" value="1" />
@@ -20,10 +19,5 @@
     <property name="convertTo" value="dot" />
     <property name="order" value="3" />
   </bean>
-  
-  <bean class="com.archdia.dv8.naming.SimplePlatformNamePreProcessor">
-    <property name="convertFrom" value="windows" />
-    <property name="convertTo" value="dot" />
-    <property name="order" value="4" />
-  </bean>
+
 </config>
