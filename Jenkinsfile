@@ -1,28 +1,16 @@
-/*
-
-Set up Jenkins container
-docker run -t -u root -p 8080:8080 -v jenkins-data:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -v "$HOME":/home --network mynet --name jenkins jenkinsci/blueocean
-
-Set up DV8 container
-docker run -it --rm -p 8000:8080 -v jenkins-data:/var/jenkins_home -v /Users/humbertocervantes/Downloads/dv8-2.0.0-2019051701-education/debugTmp/:/var/jenkins_home/workspace/ServiceComponentRuntime@2/Architecture-analysis-result --network mynet --name dv8-console dv8-console java -jar gs-rest-service-0.1.0.jar
-
-See the containers ip address
-docker network inspect mynet
-
-ServiceComponentRuntime Jenkinsfile
-
-*/
 pipeline {
-    agent any
+    environment {
+        DV8_CONSOLE_IP='dv8-console:8080'
+        PROJECT_LANGUAGE='java'
+        
+    }
+    agent none
     options {
         skipStagesAfterUnstable()
     }
-    environment {
-        DV8_CONSOLE_IP='172.18.0.2:8080'
-        WORKING_DIR='/var/jenkins_home/workspace/ServiceComponentRuntime@2'
-    }
     stages {
     
+    		
         stage('Build') {
             agent {
                 docker {
@@ -32,43 +20,53 @@ pipeline {
             }
             steps {
                 sh 'mvn -B -DskipTests clean package'
+                script {
+	        		env.WORKSPACE="${WORKSPACE}"
+	        	}
             }
         } 
-        
-        /*
-        stage('Sonarqube analysis') {
-            environment {
-                SONAR_SCANNER_OPTS = "-Xmx2g -Dsonar.projectKey=ServiceComponentRuntime -Dsonar.login=534e3ba62bc724b92c4e3ba2b771ffe3d8dfa08a -Dsonar.java.binaries=${WORKING_DIR}/target/classes"
-            } 
-            steps {
-                withSonarQubeEnv('SonarQube') {
-                    sh "/var/jenkins_home/sonar-scanner/sonar-scanner-3.3.0.1492-linux/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
-                }
-            }
-        }
-        */
-        
 
+        
+        
         stage('DV8 analysis') {
+        	agent any
             steps {
                 /* sh 'curl http://${DV8_CONSOLE_IP}:8080/test-connection 2>/dev/null|jq -r .result' */
 
                 echo "preprocessing files:"
-                sh 'curl http://${DV8_CONSOLE_IP}/preprocessor?directory=${WORKING_DIR}'
+                sh 'curl http://${DV8_CONSOLE_IP}/preprocessor?directory=${WORKSPACE}'
                 
 
                 echo "generating arch-report:"
-                sh 'curl http://${DV8_CONSOLE_IP}/arch-report?directory=${WORKING_DIR}'
+                sh 'curl http://${DV8_CONSOLE_IP}/arch-report?directory=${WORKSPACE}'
 
                 echo "Propagation cost ="
-                echo sh(returnStdout: true, script: 'curl -X POST http://${DV8_CONSOLE_IP}/metrics -d "directory=${WORKING_DIR}&metric=pc" 2>/dev/null')
+                echo sh(returnStdout: true, script: 'curl -X POST http://${DV8_CONSOLE_IP}/metrics -d "directory=${WORKSPACE}&metric=pc" 2>/dev/null')
                 
                 echo "Decoupling level ="
-                echo sh(returnStdout: true, script: 'curl -X POST http://${DV8_CONSOLE_IP}/metrics -d "directory=${WORKING_DIR}&metric=dl" 2>/dev/null')
+                echo sh(returnStdout: true, script: 'curl -X POST http://${DV8_CONSOLE_IP}/metrics -d "directory=${WORKSPACE}&metric=dl" 2>/dev/null')
 
             }
         }
+       
+        
+        stage('Sonarqube analysis') {
+            
+            agent any
+            environment {
+                SONAR_SCANNER_OPTS = "-Xmx2g -Dsonar.projectKey=ServiceComponentRuntime -Dsonar.login=REPLACE_TOKEN_HERE -Dsonar.language=${PROJECT_LANGUAGE} -Dsonar.java.binaries=${WORKSPACE}/target/classes -Dsonar.projectBaseDir=${WORKSPACE} -Dsonar.dv8address=${DV8_CONSOLE_IP}"
 
+        		scannerHome = tool 'SonarQubeScanner'
+    		}
+    		steps {
+        		withSonarQubeEnv('SonarQube') {
+            		sh "${scannerHome}/bin/sonar-scanner"
+        		}
 
+        		timeout(time: 10, unit: 'MINUTES') {
+            		waitForQualityGate abortPipeline: true
+            	}
+            }
+        }
     }
 }
