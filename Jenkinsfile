@@ -46,6 +46,8 @@ pipeline {
                 echo "Decoupling level ="
                 echo sh(returnStdout: true, script: 'curl -X POST http://${DV8_CONSOLE_IP}/metrics -d "directory=${WORKSPACE}&metric=dl" 2>/dev/null')
 
+		echo "ArchIssues-Summary="
+		sh 'curl http://${DV8_CONSOLE_IP}/archIssues-sumary?directory=${WORKSPACE}'		
             }
         }
        

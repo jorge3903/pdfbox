@@ -1,0 +1,5 @@
+RootIndex,LeadingFile,Size,Coverage,CoverUpto
+root 1, main.java.org.apache.felix.scr.impl.manager.RefPair_java, 18, 0.500000, 0.428571 
+root 2, main.java.org.apache.felix.scr.impl.logger.ScrLogger_java, 7, 0.714286, 0.666667 
+root 3, main.java.org.apache.felix.scr.impl.ComponentCommands_java, 4, 0.750000, 0.761905 
+root 4, main.java.org.apache.felix.scr.impl.manager.ComponentActivator_java, 13, 0.615385, 0.857143 

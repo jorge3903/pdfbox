@@ -1,0 +1,16 @@
+Index,Size,Fan-in,Fan-out,CrossingCenter
+Crossing1,31,9,24,main.java.org.apache.felix.scr.impl.manager.DependencyManager_java,
+Crossing2,29,24,4,main.java.org.apache.felix.scr.impl.logger.ComponentLogger_java,
+Crossing3,27,11,18,main.java.org.apache.felix.scr.impl.manager.AbstractComponentManager_java,
+Crossing4,26,18,11,main.java.org.apache.felix.scr.impl.manager.ComponentContextImpl_java,
+Crossing5,24,21,5,main.java.org.apache.felix.scr.impl.metadata.ComponentMetadata_java,
+Crossing6,21,5,17,main.java.org.apache.felix.scr.impl.manager.SingleComponentManager_java,
+Crossing7,20,4,16,main.java.org.apache.felix.scr.impl.ComponentRegistry_java,
+Crossing8,16,12,6,main.java.org.apache.felix.scr.impl.manager.ComponentActivator_java,
+Crossing9,14,8,5,main.java.org.apache.felix.scr.impl.inject.ComponentMethods_java,
+Crossing10,11,5,5,main.java.org.apache.felix.scr.impl.logger.BundleLogger_java,
+Crossing11,11,6,4,main.java.org.apache.felix.scr.impl.logger.ScrLogger_java,
+Crossing12,10,4,7,main.java.org.apache.felix.scr.impl.manager.RegionConfigurationSupport_java,
+Crossing13,10,6,4,main.java.org.apache.felix.scr.impl.manager.ComponentContainer_java,
+Crossing14,9,4,4,main.java.org.apache.felix.scr.impl.logger.LogServiceEnabledLogger_java,
+

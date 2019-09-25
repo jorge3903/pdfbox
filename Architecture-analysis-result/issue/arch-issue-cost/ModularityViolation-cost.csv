@@ -1,0 +1,6 @@
+IssueType,Issue Size,#Bug Commits,Tot Loc bug changed,#Changes,Tot Loc changed
+ModularityViolation1,97.0,78.0,2667.0,142.0,7207.0
+ModularityViolation2,95.0,71.0,2661.0,140.0,7207.0
+ModularityViolation3,87.0,61.0,1819.0,125.0,6300.0
+
+ModularityViolation-All,99.0,80.0,2830.0,147.0,7600.0

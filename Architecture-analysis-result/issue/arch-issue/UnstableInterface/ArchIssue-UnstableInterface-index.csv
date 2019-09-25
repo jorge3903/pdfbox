@@ -1,0 +1,14 @@
+Index,Size,UnstableInterface
+UnstableInterface1,98,main.java.org.apache.felix.scr.impl.manager.RefPair_java
+UnstableInterface2,98,main.java.org.apache.felix.scr.impl.inject.ReferenceMethod_java
+UnstableInterface3,98,main.java.org.apache.felix.scr.impl.manager.AbstractComponentManager_java
+UnstableInterface4,98,main.java.org.apache.felix.scr.impl.metadata.ReferenceMetadata_java
+UnstableInterface5,98,main.java.org.apache.felix.scr.impl.logger.AbstractLogger_java
+UnstableInterface6,98,main.java.org.apache.felix.scr.impl.metadata.ComponentMetadata_java
+UnstableInterface7,98,main.java.org.apache.felix.scr.impl.logger.ComponentLogger_java
+UnstableInterface8,98,main.java.org.apache.felix.scr.impl.inject.MethodResult_java
+UnstableInterface9,98,main.java.org.apache.felix.scr.impl.manager.ComponentActivator_java
+UnstableInterface10,98,main.java.org.apache.felix.scr.impl.manager.ComponentContextImpl_java
+UnstableInterface11,98,main.java.org.apache.felix.scr.impl.metadata.DSVersion_java
+UnstableInterface12,98,main.java.org.apache.felix.scr.impl.manager.ScrConfiguration_java
+

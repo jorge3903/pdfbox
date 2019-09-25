@@ -1,0 +1,19 @@
+IssueType,Issue Size,#Bug Commits,Tot Loc bug changed,#Changes,Tot Loc changed
+UnhealthyInheritance1,11.0,22.0,688.0,21.0,457.0
+UnhealthyInheritance2,7.0,4.0,106.0,7.0,3.0
+UnhealthyInheritance3,6.0,5.0,131.0,13.0,137.0
+UnhealthyInheritance4,6.0,12.0,266.0,28.0,3257.0
+UnhealthyInheritance5,6.0,19.0,605.0,7.0,92.0
+UnhealthyInheritance6,5.0,0.0,0.0,5.0,0.0
+UnhealthyInheritance7,5.0,9.0,796.0,5.0,843.0
+UnhealthyInheritance8,4.0,2.0,7.0,4.0,0.0
+UnhealthyInheritance9,4.0,1.0,25.0,9.0,81.0
+UnhealthyInheritance10,3.0,12.0,267.0,13.0,452.0
+UnhealthyInheritance11,3.0,4.0,42.0,12.0,1985.0
+UnhealthyInheritance12,3.0,3.0,163.0,3.0,0.0
+UnhealthyInheritance13,3.0,2.0,10.0,3.0,868.0
+UnhealthyInheritance14,3.0,1.0,25.0,8.0,81.0
+UnhealthyInheritance15,3.0,4.0,172.0,3.0,868.0
+UnhealthyInheritance16,2.0,6.0,593.0,2.0,0.0
+
+UnhealthyInheritance-All,47.0,54.0,2456.0,77.0,4334.0

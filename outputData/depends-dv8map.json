@@ -4,7 +4,7 @@
     "id" : {
       "family" : 0,
       "vendor" : 2,
-      "type" : 11
+      "type" : 10
     }
   },
   "Call" : {
@@ -60,7 +60,7 @@
     "id" : {
       "family" : 0,
       "vendor" : 2,
-      "type" : 13
+      "type" : 12
     }
   },
   "Extend" : {
@@ -84,15 +84,7 @@
     "id" : {
       "family" : 0,
       "vendor" : 2,
-      "type" : 12
-    }
-  },
-  "Receive" : {
-    "name" : "Receive",
-    "id" : {
-      "family" : 0,
-      "vendor" : 2,
-      "type" : 10
+      "type" : 11
     }
   },
   "Parameter" : {
@@ -109,14 +101,6 @@
       "family" : 0,
       "vendor" : 2,
       "type" : 1
-    }
-  },
-  "Parameter" : {
-    "name" : "Parameter",
-    "id" : {
-      "family" : 0,
-      "vendor" : 2,
-      "type" : 14
     }
   }
 }
