@@ -4,7 +4,7 @@
     "id" : {
       "family" : 0,
       "vendor" : 2,
-      "type" : 10
+      "type" : 11
     }
   },
   "Call" : {
@@ -60,7 +60,7 @@
     "id" : {
       "family" : 0,
       "vendor" : 2,
-      "type" : 12
+      "type" : 13
     }
   },
   "Extend" : {
@@ -84,7 +84,15 @@
     "id" : {
       "family" : 0,
       "vendor" : 2,
-      "type" : 11
+      "type" : 12
+    }
+  },
+  "Receive" : {
+    "name" : "Receive",
+    "id" : {
+      "family" : 0,
+      "vendor" : 2,
+      "type" : 10
     }
   },
   "Parameter" : {

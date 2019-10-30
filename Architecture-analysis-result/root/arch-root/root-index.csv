@@ -1,5 +1,10 @@
 RootIndex,LeadingFile,Size,Coverage,CoverUpto
-root 1, main.java.org.apache.felix.scr.impl.manager.RefPair_java, 18, 0.500000, 0.428571 
-root 2, main.java.org.apache.felix.scr.impl.logger.ScrLogger_java, 7, 0.714286, 0.666667 
-root 3, main.java.org.apache.felix.scr.impl.ComponentCommands_java, 4, 0.750000, 0.761905 
-root 4, main.java.org.apache.felix.scr.impl.manager.ComponentActivator_java, 13, 0.615385, 0.857143 
+root 1, pdfbox.src.main.java.org.apache.pdfbox.io.IOUtils_java, 91, 0.307692, 0.243478 
+root 2, pdfbox.src.main.java.org.apache.pdfbox.pdmodel.common.PDRectangle_java, 89, 0.303371, 0.408696 
+root 3, pdfbox.src.main.java.org.apache.pdfbox.cos.COSNumber_java, 87, 0.252874, 0.495652 
+root 4, fontbox.src.main.java.org.apache.fontbox.ttf.TrueTypeFont_java, 51, 0.294118, 0.573913 
+root 5, pdfbox.src.main.java.org.apache.pdfbox.cos.COSDocument_java, 74, 0.283784, 0.634783 
+root 6, pdfbox.src.main.java.org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation_java, 76, 0.250000, 0.686957 
+root 7, pdfbox.src.main.java.org.apache.pdfbox.pdmodel.graphics.color.PDColorSpace_java, 69, 0.217391, 0.739130 
+root 8, pdfbox.src.main.java.org.apache.pdfbox.pdmodel.font.encoding.Encoding_java, 29, 0.379310, 0.773913 
+root 9, pdfbox.src.main.java.org.apache.pdfbox.cos.COSString_java, 76, 0.197368, 0.800000 

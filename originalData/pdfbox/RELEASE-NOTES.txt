@@ -1,0 +1,116 @@
+Release Notes -- Apache PDFBox -- Version 2.0.14
+
+Introduction
+------------
+
+The Apache PDFBox library is an open source Java tool for working with PDF documents.
+
+This is an incremental bugfix release based on the earlier 2.0.13 release. It contains
+a couple of fixes and small improvements.
+
+For more details on these changes and all the other fixes and improvements
+included in this release, please refer to the following issues on the
+PDFBox issue tracker at https://issues.apache.org/jira/browse/PDFBOX.
+
+Sub-task
+
+[PDFBOX-4460] - Show URL or page destination in PDFDebugger on mouse move
+
+Bug
+
+[PDFBOX-3973] - OCG Layers partly lost after merge
+[PDFBOX-4003] - Can't retrieve number tree from structure tree
+[PDFBOX-4009] - Structure tree lost when merging from the command line
+[PDFBOX-4149] - PDF consisting on one page with 5 MB renders until the end of time using renderImageWithDPI
+[PDFBOX-4193] - StackOverflow
+[PDFBOX-4233] - Flatten does not work properly on field with type 0 font
+[PDFBOX-4303] - Helv and ZaDb overridden
+[PDFBOX-4390] - ExtractText loses spaces when rotationMagic option is used
+[PDFBOX-4391] - Page to image rendering in pdfbox 2.0: Poor quality compared to 1.8
+[PDFBOX-4392] - PDF completely blow up the RAM on amazon instances
+[PDFBOX-4393] - PDF signature invalid after second interactive field signed
+[PDFBOX-4395] - Accent positioning in Type1 fonts
+[PDFBOX-4399] - Disabled optional content groups are rendered
+[PDFBOX-4400] - jlink loading police.afm files
+[PDFBOX-4406] - PrintBookmarks does not support named destinations
+[PDFBOX-4407] - ParentTree Objects do not match KArray objects after merge
+[PDFBOX-4408] - Object StructParent property does not match entry in parent tree
+[PDFBOX-4415] - Structure tree RoleMap isn't merged
+[PDFBOX-4416] - Structure tree IDTree isn't merged
+[PDFBOX-4417] - Merged file has several structure trees
+[PDFBOX-4418] - ParentTree can't be merged if it has several levels
+[PDFBOX-4419] - Merging doesn't consider MarkInfo properly
+[PDFBOX-4422] - PDF with OutputIntent with alternative colorspace with incorrect component count validates
+[PDFBOX-4423] - Merge test checkWithNumberTree() fails when widget has no StructParent
+[PDFBOX-4428] - pdfbox called by Lotus Notes/Domino agent can't load afm fonts
+[PDFBOX-4429] - Bogus /StructParent(s) entries are kept when merging with file that has a structure tree
+[PDFBOX-4435] - Poor quality printing of PDF label
+[PDFBOX-4437] - Import XFDF stamp annotation loses appearance
+[PDFBOX-4444] - NPE in PDNumberTreeNode.convertCOSToPD()
+[PDFBOX-4445] - Language and Viewer Preferences are not properly merged
+[PDFBOX-4446] - Tolerate some incorrect Xref in PDF file
+[PDFBOX-4449] - Rotated pages produce matrix value like -0.999999999999999 instead of -1
+[PDFBOX-4450] - java.lang.OutOfMemoryError when validating pdf
+[PDFBOX-4451] - ArrayIndexOutOfBoundsException in PDRectangle constructor
+[PDFBOX-4452] - ClassCastException in PDPageTree
+[PDFBOX-4453] - Encrypted string not decrypted
+[PDFBOX-4456] - PrintPDF doesn't support 1:1 printer name matching
+[PDFBOX-4459] - PDPageDestination.retrievePageNumber() returns 0 on isolated page
+[PDFBOX-4461] - PDFunctionType0.eval() damages its input
+[PDFBOX-4466] - Signature without /Type /Sig can't be read
+[PDFBOX-4470] - Red areas around text when converting a pdf to png with pdfbox
+
+Improvement
+
+[PDFBOX-4231] - cache file fallback if not writable
+[PDFBOX-4394] - Encrypt CLI default key length should be strong
+[PDFBOX-4397] - made enum fromString() less error-prone
+[PDFBOX-4411] - Support caching of ICC based color spaces
+[PDFBOX-4413] - Add support for AES256 encryption for public key
+[PDFBOX-4420] - Correct javadoc comment
+[PDFBOX-4434] - Create flexible CheckBox and RadioButtons example
+[PDFBOX-4455] - empty widget list of non terminal field should be non modifiable
+[PDFBOX-4457] - Multiple Fonts with fallback technology
+[PDFBOX-4462] - Add watermark example
+[PDFBOX-4463] - Add PDExtendedGraphicsState.setBlendMode() to 2.0
+
+Task
+
+[PDFBOX-4388] - Update several tests to cache downloaded test files with download-maven-plugin
+[PDFBOX-4401] - Fine-tune KCMS warning message + update documentation
+
+
+Release Contents
+----------------
+
+This release consists of a single source archive packaged as a zip file.
+The archive can be unpacked with the jar tool from your JDK installation.
+See the README.txt file for instructions on how to build this release.
+
+The source archive is accompanied by a SHA512 checksum and a PGP signature
+that you can use to verify the authenticity of your download.
+The public key used for the PGP signature can be found at
+https://www.apache.org/dist/pdfbox/KEYS.
+
+About Apache PDFBox
+-------------------
+
+Apache PDFBox is an open source Java library for working with PDF documents.
+This project allows creation of new PDF documents, manipulation of existing
+documents and the ability to extract content from documents. Apache PDFBox
+also includes several command line utilities. Apache PDFBox is published
+under the Apache License, Version 2.0.
+
+For more information, visit http://pdfbox.apache.org/
+
+About The Apache Software Foundation
+------------------------------------
+
+Established in 1999, The Apache Software Foundation provides organizational,
+legal, and financial support for more than 100 freely-available,
+collaboratively-developed Open Source projects. The pragmatic Apache License
+enables individual and commercial users to easily deploy Apache software;
+the Foundation's intellectual property framework limits the legal exposure
+of its 2,500+ contributors.
+
+For more information, visit http://www.apache.org/

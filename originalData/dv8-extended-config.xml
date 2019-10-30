@@ -3,7 +3,7 @@
   <bean class="com.archdia.dv8.naming.SimpleAffixRemovalNamePreProcessor">
     <property name="prefixes">
       <list> 
-   	<value>.</value>
+   	<value>..</value>
       </list>
     </property>
     <property name="order" value="1" />
