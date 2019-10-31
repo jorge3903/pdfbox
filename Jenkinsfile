@@ -46,7 +46,7 @@ pipeline {
  		script{
 
 		echo "preprocessing files:"
-		request_proccesor= sh(returnStdout: true, script: "curl -i -o - --silent -X GET --header 'Accept: application/json' http://\${DV8_CONSOLE_IP}/preprocessor?directory=\${WORKSPACE}'&sourceCodePath=/originalData/pdfbox/pdfbox/'"); // we make the preprocessor request
+		request_proccesor= sh(returnStdout: true, script: "curl -i -o - --silent -X GET --header 'Accept: application/json' http://\${DV8_CONSOLE_IP}/preprocessor?directory=\${WORKSPACE}'&sourceCodePath=/originalData/pdfbox/pdfbox/src'"); // we make the preprocessor request
 		//echo request_proccesor
 		getStatusAndBody(request_proccesor) // we analyze the preprocessor request 
 
