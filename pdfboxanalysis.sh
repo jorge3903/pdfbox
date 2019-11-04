@@ -47,10 +47,10 @@ echo "generating history dsm..."
 dv8-console scm:history:gittxt:convert-matrix -matrix $structureDsmPath -maxCochangeCount 500 -outputFile $historyDsmPath "$hdsmConfigPath" $gitlogPath
 
 echo "generating change list..."
-dv8-console scm:genchangelist:gittxt:generate-changelist -outputFolder $listFolderPath $hdsmConfigPath $gitlogPath
+dv8-console scm:history:genchangelist:gittxt:generate-changelist -outputFolder $listFolderPath $hdsmConfigPath $gitlogPath
 
 echo "generating target list..."
-dv8-console scm:gentargetlist:gittxt:generate-targetlist -regex $regex -targetissuecsv $targetlistPath -outputFolder $listFolderPath $hdsmConfigPath $gitlogPath
+dv8-console scm:history:gentargetlist:gittxt:generate-targetlist -regex $regex -targetissuecsv $targetlistPath -outputFolder $listFolderPath $hdsmConfigPath $gitlogPath
 
 echo "merging structure and history dsm..."
 dv8-console merge-matrix -outputFile $mergedDsmPath $structureDsmPath $historyDsmPath
