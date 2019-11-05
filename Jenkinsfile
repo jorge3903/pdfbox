@@ -80,7 +80,7 @@ pipeline {
             }
         }
         
-        stage('Sonarqube analysis') {
+       /* stage('Sonarqube analysis') {
             
             agent any
             environment {
@@ -97,7 +97,7 @@ pipeline {
             		waitForQualityGate abortPipeline: true
             	}
             }
-        }
+        }*/
     } 
     post { // these methods are executed at the end of the pipeline, depending on the state in which it ends
 	success{ // This method is executed if the pipe is successfully completed.
