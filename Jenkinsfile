@@ -33,7 +33,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'mvn -f originalData/pdfbox/pdfbox -B -DskipTests clean package'
+                //sh 'mvn -f originalData/pdfbox/pdfbox -B -DskipTests clean package'
                 script {
 	        		env.WORKSPACE="${WORKSPACE}"
 	        	}
@@ -84,7 +84,7 @@ pipeline {
             
             agent any
             environment {
-                SONAR_SCANNER_OPTS = "-Xmx2g -Dsonar.projectKey=ServiceComponentRuntime -Dsonar.login=d0b15c920b2fef2f001a73b3812927ccf4baa910 -Dsonar.language=${PROJECT_LANGUAGE} -Dsonar.java.binaries=${WORKSPACE}/target/classes -Dsonar.projectBaseDir=${WORKSPACE} -Dsonar.dv8address=${DV8_CONSOLE_IP}"
+                SONAR_SCANNER_OPTS = "-Xmx2g -Dsonar.projectKey=ServiceComponentRuntime -Dsonar.login=d0b15c920b2fef2f001a73b3812927ccf4baa910 -Dsonar.language=${PROJECT_LANGUAGE} -Dsonar.java.binaries=${WORKSPACE}/originalData/pdfbox/pdfbox/target/classes -Dsonar.projectBaseDir=${WORKSPACE} -Dsonar.dv8address=${DV8_CONSOLE_IP}"
 
         		scannerHome = tool 'SonarQubeScanner'
     		}
