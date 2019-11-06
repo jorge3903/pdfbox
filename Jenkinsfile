@@ -34,14 +34,14 @@ pipeline {
             }
             steps {
 		sh 'ls originalData/pdfbox'
-                //sh 'mvn -f originalData/pdfbox -B -DskipTests clean package'
+                sh 'mvn -f originalData/pdfbox -B -DskipTests clean package'
                 script {
 	        		env.WORKSPACE="${WORKSPACE}"
 	        	}
             }
         }     
         
-        stage('DV8 analysis') {
+        /* stage('DV8 analysis') {
         	agent any
             steps {
  		script{
@@ -81,7 +81,7 @@ pipeline {
             }
         }
         
-       /* stage('Sonarqube analysis') {
+        stage('Sonarqube analysis') {
             
             agent any
             environment {
