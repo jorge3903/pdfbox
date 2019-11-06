@@ -455,13 +455,13 @@
                             <sha512>6ed5287342ec8a5459a86462d80917bb625d5973df96fdebd5e3c8bc2e9093e6c389f5c8151eb17472a24e1349386a3e7c1a0021e9a967761a554ac1ade557eb</sha512>
                         </configuration>
                     </execution>
-                    <execution>
+                  <!--     <execution>
                         <id>PDFBOX-4106</id>
                         <phase>generate-test-resources</phase>
                         <goals>
                             <goal>wget</goal>
                         </goals>
-                        <configuration>
+                     <configuration>
                             <url>https://ipafont.ipa.go.jp/old/ipafont/ipag00303.php</url>
                             <outputDirectory>${project.build.directory}/fonts</outputDirectory>
                             <outputFileName>ipag00303.zip</outputFileName>
@@ -482,7 +482,7 @@
                             <unpack>true</unpack>
                             <sha512>26d0a9bfba7f5457a98b0bf45a4a6b081bca4140047a0886625691231459f8c81a6cdbe523e9abcbd45fd7caed21d78f1baf3a2cf9167320f6b79be3d697cb5b</sha512>
                         </configuration>
-                    </execution>
+                    </execution> -->
                     <execution>
                         <id>PDFBOX-4115</id>
                         <phase>generate-test-resources</phase>
