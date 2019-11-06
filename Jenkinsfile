@@ -34,9 +34,9 @@ pipeline {
             }
             steps {
 		//sh 'ls originalData/pdfbox'
-                //sh 'mvn -f originalData/pdfbox/pom.xml -B -DskipTests clean package'
+                //sh 'mvn -f originalData/pdfbox/pdfbox/pom.xml -B -DskipTests clean package'
 		sh '''
-		cd originalData/pdfbox
+		cd originalData/pdfbox/pdfbox
 		ls
 		mvn -B -DskipTests clean package
 		'''
