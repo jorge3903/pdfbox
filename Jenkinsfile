@@ -33,6 +33,7 @@ pipeline {
                 }
             }
             steps {
+		sh 'ls originalData/pdfbox'
                 //sh 'mvn -f originalData/pdfbox -B -DskipTests clean package'
                 script {
 	        		env.WORKSPACE="${WORKSPACE}"
