@@ -38,7 +38,7 @@ pipeline {
 		sh '''
 		cd originalData/pdfbox
 		ls
-		mvn clean package
+		mvn -DskipTests clean package
 		'''
                 script {
 	        		env.WORKSPACE="${WORKSPACE}"
