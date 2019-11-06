@@ -36,9 +36,9 @@ pipeline {
 		//sh 'ls originalData/pdfbox'
                 //sh 'mvn -f originalData/pdfbox/pdfbox/pom.xml -B -DskipTests clean package'
 		sh '''
-		cd originalData/pdfbox/pdfbox
+		cd originalData/pdfbox
 		ls
-		mvn -B -DskipTests clean package
+		mvn -B -DskipTests clean
 		'''
                 script {
 	        		env.WORKSPACE="${WORKSPACE}"
