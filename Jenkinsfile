@@ -28,12 +28,12 @@ pipeline {
         stage('Build') {
             agent {
                 docker {
-                    image 'maven:3-alpine'
+                    image 'maven:8-alpine'
                     args '-v /root/.m2:/root/.m2'
                 }
             }
             steps {
-                sh 'mvn -f originalData/pdfbox -B -DskipTests clean'
+                sh 'mvn -f originalData/pdfbox -B -DskipTests clean package'
                 script {
 	        		env.WORKSPACE="${WORKSPACE}"
 	        	}
