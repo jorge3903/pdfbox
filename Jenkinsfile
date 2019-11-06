@@ -35,18 +35,18 @@ pipeline {
             steps {
 		//sh 'ls originalData/pdfbox'
                 //sh 'mvn -f originalData/pdfbox/pdfbox/pom.xml -B -DskipTests clean package'
-		sh '''
-		cd originalData/pdfbox
-		ls
-		mvn -e switch -B -DskipTests clean package 
-		'''
+		//sh '''
+		//cd originalData/pdfbox
+		//ls
+		//mvn -e switch -B -DskipTests clean package 
+		//'''
                 script {
 	        		env.WORKSPACE="${WORKSPACE}"
 	        	}
             }
         }     
         
-        /* stage('DV8 analysis') {
+        stage('DV8 analysis') {
         	agent any
             steps {
  		script{
@@ -90,7 +90,7 @@ pipeline {
             
             agent any
             environment {
-                SONAR_SCANNER_OPTS = "-Xmx2g -Dsonar.projectKey=ServiceComponentRuntime -Dsonar.login=d0b15c920b2fef2f001a73b3812927ccf4baa910 -Dsonar.language=${PROJECT_LANGUAGE} -Dsonar.java.binaries=${WORKSPACE}/originalData/pdfbox/pdfbox/target/classes -Dsonar.projectBaseDir=${WORKSPACE} -Dsonar.dv8address=${DV8_CONSOLE_IP}"
+                SONAR_SCANNER_OPTS = "-Xmx2g -Dsonar.projectKey=ServicePdfBoxRuntime -Dsonar.login=d0b15c920b2fef2f001a73b3812927ccf4baa910 -Dsonar.language=${PROJECT_LANGUAGE} -Dsonar.java.binaries=${WORKSPACE}/originalData/pdfbox/pdfbox/target/classes -Dsonar.projectBaseDir=${WORKSPACE} -Dsonar.dv8address=${DV8_CONSOLE_IP}"
 
         		scannerHome = tool 'SonarQubeScanner'
     		}
@@ -103,7 +103,7 @@ pipeline {
             		waitForQualityGate abortPipeline: true
             	}
             }
-        }*/
+        }
     } 
     post { // these methods are executed at the end of the pipeline, depending on the state in which it ends
 	success{ // This method is executed if the pipe is successfully completed.
