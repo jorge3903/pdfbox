@@ -35,11 +35,10 @@ pipeline {
             steps {
 		//sh 'ls originalData/pdfbox'
                 //sh 'mvn -f originalData/pdfbox/pdfbox/pom.xml -B -DskipTests clean package'
+		sh 'curl http://www.humbertocervantes.net'
 		sh '''
 		cd originalData/pdfbox
 		ls
-		mvn --help
-		mvn --version
 		mvn -e switch -B -DskipTests clean package
 		'''
                 script {
